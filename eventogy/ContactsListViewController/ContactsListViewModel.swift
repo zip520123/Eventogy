@@ -20,10 +20,16 @@ final class ContactsListViewModel {
 
   let disposeBag = DisposeBag()
 
-  init(service: ServiceType) {
+  init(service: ServiceType, db: DB = UserDefaultDB()) {
     let currentPage = BehaviorRelay<Int>(value: 1)
-    
+    let shouldSaveContacts = PublishRelay<[Contact]>()
     let shouldGetContact = PublishRelay<()>()
+    
+    shouldSaveContacts.flatMapFirst({ (contacts) in
+      db.save(contacts: contacts) })
+    .subscribe(onNext: { (_) in
+      print("did save contacts") })
+    .disposed(by: disposeBag)
     
     let didGetContact = shouldGetContact
       .withLatestFrom(currentPage)
@@ -31,7 +37,11 @@ final class ContactsListViewModel {
         service.requestContact(page: page)
       }
       .do(onNext: { (contacts) in
+        shouldSaveContacts.accept(contacts)
         currentPage.nextPage()
+      })
+      .catchError({ (error) in
+        db.readContacts()
       })
       .asDriverOnErrorJustIgnored()
     

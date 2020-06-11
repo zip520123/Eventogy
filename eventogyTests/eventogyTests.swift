@@ -47,7 +47,6 @@ class eventogyTests: XCTestCase {
     let expection = XCTestExpectation()
     
     viewModel.outputs.didGetContact.drive(onNext: { (contact) in
-      
       expection.fulfill()
     }).disposed(by: disposeBag)
     
@@ -55,6 +54,39 @@ class eventogyTests: XCTestCase {
     
     wait(for: [expection], timeout: 10)
     
+  }
+  
+  func testRealApiRequest() {
+    let service = Service()
+    let expectation = XCTestExpectation()
+    
+    service.requestContact(page: 1).subscribe(onNext: { (contact) in
+      expectation.fulfill()
+    }).disposed(by: disposeBag)
+    
+    wait(for: [expectation], timeout: 5)
+  }
+  
+  func testDBReadWrite() throws {
+    let db = UserDefaultDB()
+    let data = try readString(from: "contacts.json").data(using: .utf8)!
+    let fakeContacts = try! EODecoder().decode([Contact].self, from: data)
+    let expectation = XCTestExpectation()
+    
+    db.readContacts().flatMap { (contacts) -> Observable<()> in
+        XCTAssert(contacts.count == 0)
+        return db.save(contacts: fakeContacts)
+      }
+      .flatMap ({
+        return db.readContacts()
+      })
+      .subscribe(onNext: { (contacts) in
+        XCTAssert(contacts.count == 6)
+        expectation.fulfill()
+      })
+      .disposed(by: disposeBag)
+      
+    wait(for: [expectation], timeout: 5)
   }
 
 }

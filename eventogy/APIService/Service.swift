@@ -8,11 +8,31 @@
 
 import Foundation
 import RxSwift
+import Alamofire
+
+enum NetworkError: Error {
+  case dataIsNil
+}
 
 struct Service: ServiceType {
   
   func requestContact(page: Int) -> Observable<[Contact]> {
-    return Observable.just([])
+    return Observable<[Contact]>.create { (observer) -> Disposable in
+      
+      let path = "https://demomedia.co.uk/files/contacts.json"
+      let request = AF.request(path).responseDecodable(of: [Contact].self, decoder: EODecoder()) { (response) in
+        do {
+          let contacts = try response.result.get()
+          observer.onNext(contacts)
+          observer.onCompleted()
+        } catch {
+          observer.onError(error)
+        }
+      }
+      return Disposables.create {
+        request.cancel()
+      }
+    }
   }
-  
 }
+
