@@ -24,11 +24,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   func contactsListCoordinator() -> UINavigationController {
     let navgationController = UINavigationController()
-    contactsCoordinator = ContactsListCoordinator(navigationController: navgationController, service: Service())
+    
+    let service = try! mockService(with: "contacts.json")
+    contactsCoordinator = ContactsListCoordinator(navigationController: navgationController, service: service)
     contactsCoordinator?.start()
     return navgationController
   }
   
-
+  func readString(from file: String) throws -> String {
+    let bundle = Bundle(for: type(of: self))
+    let path = bundle.url(forResource: file, withExtension: nil)!
+    let data = try Data(contentsOf: path)
+    return String(data: data, encoding: .utf8)!
+  }
+  
+  func mockService(with file: String) throws -> MockService {
+    return MockService(testString: try readString(from: file))
+  }
 }
 

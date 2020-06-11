@@ -64,7 +64,14 @@ final class ContactsListViewController: UIViewController, UITableViewDelegate, U
     let contact = contacts[indexPath.row]
     
     if let url = URL(string: contact.avatarURL) {
-      cell.imageView?.kf.setImage(with: url)
+      cell.imageView?.kf.setImage(with: url, completionHandler: { (result) in
+        switch result {
+        case .success(_):
+          cell.setNeedsLayout()
+        case .failure(let error):
+          print(error)
+        }
+      })
     }
     if let firstName = contact.firstName,
        let lastName = contact.lastName {
@@ -75,7 +82,12 @@ final class ContactsListViewController: UIViewController, UITableViewDelegate, U
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//    let contact = contacts[indexPath.row]
+    defer {
+      tableView.deselectRow(at: indexPath, animated: true)
+    }
+    let contact = contacts[indexPath.row]
+    viewModel.inputs.shouldShowContactDetail.accept(contact)
+    
   }
   
   required init?(coder: NSCoder) {

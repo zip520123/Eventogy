@@ -7,10 +7,12 @@ final class ContactsListViewModel {
 
   struct ContactsListViewModelInputs {
     let shouldGetContact: PublishRelay<()>
+    let shouldShowContactDetail: PublishRelay<Contact>
   }
 
   struct ContactsListViewModelOutputs {
     let didGetContact: Driver<[Contact]>
+    let showContactDetail: Driver<Contact>
   }
 
   var inputs: ContactsListViewModelInputs
@@ -32,9 +34,12 @@ final class ContactsListViewModel {
         currentPage.nextPage()
       })
       .asDriverOnErrorJustIgnored()
+    
+    let shouldShowContactDetail = PublishRelay<Contact>()
+    let showContactDetail = shouldShowContactDetail.asDriverOnErrorJustIgnored()
 
-    inputs = ContactsListViewModelInputs(shouldGetContact: shouldGetContact)
-    outputs = ContactsListViewModelOutputs(didGetContact: didGetContact)
+    inputs = ContactsListViewModelInputs(shouldGetContact: shouldGetContact, shouldShowContactDetail: shouldShowContactDetail)
+    outputs = ContactsListViewModelOutputs(didGetContact: didGetContact, showContactDetail: showContactDetail)
   }
 
 }

@@ -22,7 +22,7 @@ struct Contact: Codable {
   let updatedAt: Date?
   var avatarURL: String {
     get {
-      return "\(firstName ?? "")\(lastName ?? "")\(id)@adorable.io"
+      return "https://api.adorable.io/avatars/285/\(firstName ?? "")\(lastName ?? "")\(id)@adorable.io.png"
     }
   }
   

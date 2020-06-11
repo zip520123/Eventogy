@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 protocol ContactsListCoordinatorProtocol: AnyObject {
   init(navigationController: UINavigationController, service: ServiceType)
@@ -15,8 +16,9 @@ protocol ContactsListCoordinatorProtocol: AnyObject {
 
 final class ContactsListCoordinator: ContactsListCoordinatorProtocol {
   
-  let viewModel: ContactsListViewModel
-  private let navigation : UINavigationController
+  private let viewModel: ContactsListViewModel
+  private let navigation: UINavigationController
+  private let disposeBag = DisposeBag()
   
   init(navigationController: UINavigationController, service: ServiceType) {
     self.viewModel = ContactsListViewModel(service: service)
@@ -25,7 +27,9 @@ final class ContactsListCoordinator: ContactsListCoordinatorProtocol {
   }
   
   func rxbinding() {
-    
+    viewModel.outputs.showContactDetail.drive(onNext: { (contact) in
+      print(contact)
+    }).disposed(by: disposeBag)
   }
   
   func start() {
