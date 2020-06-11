@@ -20,6 +20,11 @@ struct Contact: Codable {
   let marketing: Bool?
   let createdAt: Date?
   let updatedAt: Date?
+  var avatarURL: String {
+    get {
+      return "\(firstName ?? "")\(lastName ?? "")\(id)@adorable.io"
+    }
+  }
   
   private enum CodingKeys: String, CodingKey {
     case id

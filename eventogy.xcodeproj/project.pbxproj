@@ -18,6 +18,12 @@
 		E71CDE9324927C2200F5EE9A /* EODecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71CDE9224927C2200F5EE9A /* EODecoder.swift */; };
 		E71CDE9924927DDD00F5EE9A /* ServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71CDE9824927DDD00F5EE9A /* ServiceType.swift */; };
 		E71CDE9A24927F2A00F5EE9A /* MockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71CDE9424927D8C00F5EE9A /* MockService.swift */; };
+		E71CDE9C2492832E00F5EE9A /* ContactsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71CDE9B2492832E00F5EE9A /* ContactsListViewController.swift */; };
+		E71CDE9F2492852C00F5EE9A /* ContactsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71CDE9E2492852C00F5EE9A /* ContactsListViewModel.swift */; };
+		E71CDEA12492861900F5EE9A /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71CDEA02492861900F5EE9A /* Service.swift */; };
+		E71CDEA42492889F00F5EE9A /* Rx+extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71CDEA32492889F00F5EE9A /* Rx+extention.swift */; };
+		E71CDEA62492895100F5EE9A /* ContactsListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71CDEA52492895100F5EE9A /* ContactsListCoordinator.swift */; };
+		E71CDEA724928FB100F5EE9A /* contacts.json in Resources */ = {isa = PBXBuildFile; fileRef = E71CDE9024927A0400F5EE9A /* contacts.json */; };
 		F7DFAC0B44A7EE65A7721B2F /* Pods_EventogyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B50944FAA6EEFBCF0BF47A62 /* Pods_EventogyTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +58,11 @@
 		E71CDE9224927C2200F5EE9A /* EODecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EODecoder.swift; sourceTree = "<group>"; };
 		E71CDE9424927D8C00F5EE9A /* MockService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockService.swift; sourceTree = "<group>"; };
 		E71CDE9824927DDD00F5EE9A /* ServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceType.swift; sourceTree = "<group>"; };
+		E71CDE9B2492832E00F5EE9A /* ContactsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsListViewController.swift; sourceTree = "<group>"; };
+		E71CDE9E2492852C00F5EE9A /* ContactsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsListViewModel.swift; sourceTree = "<group>"; };
+		E71CDEA02492861900F5EE9A /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		E71CDEA32492889F00F5EE9A /* Rx+extention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Rx+extention.swift"; sourceTree = "<group>"; };
+		E71CDEA52492895100F5EE9A /* ContactsListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsListCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +128,8 @@
 		E71CDE6624926B0900F5EE9A /* Eventogy */ = {
 			isa = PBXGroup;
 			children = (
+				E71CDEA22492888D00F5EE9A /* Extension */,
+				E71CDE9D249284F900F5EE9A /* ContactsListViewController */,
 				E71CDE9724927DBA00F5EE9A /* APIService */,
 				E71CDE6724926B0900F5EE9A /* AppDelegate.swift */,
 				E71CDE8C24926B3500F5EE9A /* support */,
@@ -160,8 +173,27 @@
 			children = (
 				E71CDE9424927D8C00F5EE9A /* MockService.swift */,
 				E71CDE9824927DDD00F5EE9A /* ServiceType.swift */,
+				E71CDEA02492861900F5EE9A /* Service.swift */,
 			);
 			path = APIService;
+			sourceTree = "<group>";
+		};
+		E71CDE9D249284F900F5EE9A /* ContactsListViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E71CDE9B2492832E00F5EE9A /* ContactsListViewController.swift */,
+				E71CDE9E2492852C00F5EE9A /* ContactsListViewModel.swift */,
+				E71CDEA52492895100F5EE9A /* ContactsListCoordinator.swift */,
+			);
+			path = ContactsListViewController;
+			sourceTree = "<group>";
+		};
+		E71CDEA22492888D00F5EE9A /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E71CDEA32492889F00F5EE9A /* Rx+extention.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,6 +280,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E71CDEA724928FB100F5EE9A /* contacts.json in Resources */,
 				E71CDE7624926B0B00F5EE9A /* LaunchScreen.storyboard in Resources */,
 				E71CDE7324926B0B00F5EE9A /* Assets.xcassets in Resources */,
 				E71CDE7124926B0900F5EE9A /* Main.storyboard in Resources */,
@@ -333,9 +366,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E71CDE9C2492832E00F5EE9A /* ContactsListViewController.swift in Sources */,
+				E71CDEA62492895100F5EE9A /* ContactsListCoordinator.swift in Sources */,
+				E71CDEA12492861900F5EE9A /* Service.swift in Sources */,
 				E71CDE9324927C2200F5EE9A /* EODecoder.swift in Sources */,
 				E71CDE9A24927F2A00F5EE9A /* MockService.swift in Sources */,
 				E71CDE8E249279AD00F5EE9A /* Contact.swift in Sources */,
+				E71CDE9F2492852C00F5EE9A /* ContactsListViewModel.swift in Sources */,
+				E71CDEA42492889F00F5EE9A /* Rx+extention.swift in Sources */,
 				E71CDE6824926B0900F5EE9A /* AppDelegate.swift in Sources */,
 				E71CDE9924927DDD00F5EE9A /* ServiceType.swift in Sources */,
 			);

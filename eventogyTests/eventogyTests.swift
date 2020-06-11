@@ -7,9 +7,11 @@
 //
 
 import XCTest
+import RxSwift
 @testable import Eventogy
 
 class eventogyTests: XCTestCase {
+  let disposeBag = DisposeBag()
   
   override func setUp() {
     super.setUp()
@@ -39,7 +41,21 @@ class eventogyTests: XCTestCase {
   }
   
   
-  
+  func testContactViewModel_FetchFunction() throws {
+    let service = try mockService(with: "contacts.json")
+    let viewModel = ContactsListViewModel(service: service)
+    let expection = XCTestExpectation()
+    
+    viewModel.outputs.didGetContact.drive(onNext: { (contact) in
+      
+      expection.fulfill()
+    }).disposed(by: disposeBag)
+    
+    viewModel.inputs.shouldGetContact.acceptAction()
+    
+    wait(for: [expection], timeout: 10)
+    
+  }
 
 }
 
