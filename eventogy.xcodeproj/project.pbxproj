@@ -3,15 +3,22 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E51E3ADD9B0D1E5B7C48CFB /* Pods_Eventogy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C161B61F20177FE4F6392FCB /* Pods_Eventogy.framework */; };
 		E71CDE6824926B0900F5EE9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71CDE6724926B0900F5EE9A /* AppDelegate.swift */; };
 		E71CDE7124926B0900F5EE9A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E71CDE6F24926B0900F5EE9A /* Main.storyboard */; };
 		E71CDE7324926B0B00F5EE9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E71CDE7224926B0B00F5EE9A /* Assets.xcassets */; };
 		E71CDE7624926B0B00F5EE9A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E71CDE7424926B0B00F5EE9A /* LaunchScreen.storyboard */; };
-		E71CDE8124926B0B00F5EE9A /* eventogyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71CDE8024926B0B00F5EE9A /* eventogyTests.swift */; };
+		E71CDE8124926B0B00F5EE9A /* EventogyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71CDE8024926B0B00F5EE9A /* EventogyTests.swift */; };
+		E71CDE8E249279AD00F5EE9A /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71CDE8D249279AD00F5EE9A /* Contact.swift */; };
+		E71CDE9124927A0500F5EE9A /* contacts.json in Resources */ = {isa = PBXBuildFile; fileRef = E71CDE9024927A0400F5EE9A /* contacts.json */; };
+		E71CDE9324927C2200F5EE9A /* EODecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71CDE9224927C2200F5EE9A /* EODecoder.swift */; };
+		E71CDE9924927DDD00F5EE9A /* ServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71CDE9824927DDD00F5EE9A /* ServiceType.swift */; };
+		E71CDE9A24927F2A00F5EE9A /* MockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71CDE9424927D8C00F5EE9A /* MockService.swift */; };
+		F7DFAC0B44A7EE65A7721B2F /* Pods_EventogyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B50944FAA6EEFBCF0BF47A62 /* Pods_EventogyTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,15 +32,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A873B843A01D599F50CC632 /* Pods-Eventogy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eventogy.debug.xcconfig"; path = "Target Support Files/Pods-Eventogy/Pods-Eventogy.debug.xcconfig"; sourceTree = "<group>"; };
+		61B203F898490D6DD22AD312 /* Pods-EventogyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventogyTests.release.xcconfig"; path = "Target Support Files/Pods-EventogyTests/Pods-EventogyTests.release.xcconfig"; sourceTree = "<group>"; };
+		65401C0A55915638855F1873 /* Pods-EventogyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventogyTests.debug.xcconfig"; path = "Target Support Files/Pods-EventogyTests/Pods-EventogyTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B50944FAA6EEFBCF0BF47A62 /* Pods_EventogyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventogyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C161B61F20177FE4F6392FCB /* Pods_Eventogy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Eventogy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E47ED9BFBE953CC934F0E25E /* Pods-Eventogy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eventogy.release.xcconfig"; path = "Target Support Files/Pods-Eventogy/Pods-Eventogy.release.xcconfig"; sourceTree = "<group>"; };
 		E71CDE6424926B0900F5EE9A /* Eventogy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eventogy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E71CDE6724926B0900F5EE9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E71CDE7024926B0900F5EE9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E71CDE7224926B0B00F5EE9A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E71CDE7524926B0B00F5EE9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E71CDE7724926B0B00F5EE9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E71CDE7C24926B0B00F5EE9A /* eventogyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = eventogyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E71CDE8024926B0B00F5EE9A /* eventogyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eventogyTests.swift; sourceTree = "<group>"; };
+		E71CDE7C24926B0B00F5EE9A /* EventogyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EventogyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E71CDE8024926B0B00F5EE9A /* EventogyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventogyTests.swift; sourceTree = "<group>"; };
 		E71CDE8224926B0B00F5EE9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E71CDE8D249279AD00F5EE9A /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		E71CDE9024927A0400F5EE9A /* contacts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = contacts.json; sourceTree = "<group>"; };
+		E71CDE9224927C2200F5EE9A /* EODecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EODecoder.swift; sourceTree = "<group>"; };
+		E71CDE9424927D8C00F5EE9A /* MockService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockService.swift; sourceTree = "<group>"; };
+		E71CDE9824927DDD00F5EE9A /* ServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E51E3ADD9B0D1E5B7C48CFB /* Pods_Eventogy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,18 +67,41 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7DFAC0B44A7EE65A7721B2F /* Pods_EventogyTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C515F65F511CB6987545E4E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2A873B843A01D599F50CC632 /* Pods-Eventogy.debug.xcconfig */,
+				E47ED9BFBE953CC934F0E25E /* Pods-Eventogy.release.xcconfig */,
+				65401C0A55915638855F1873 /* Pods-EventogyTests.debug.xcconfig */,
+				61B203F898490D6DD22AD312 /* Pods-EventogyTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C2E057A0867F1F2BF80221E2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C161B61F20177FE4F6392FCB /* Pods_Eventogy.framework */,
+				B50944FAA6EEFBCF0BF47A62 /* Pods_EventogyTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E71CDE5B24926B0900F5EE9A = {
 			isa = PBXGroup;
 			children = (
-				E71CDE6624926B0900F5EE9A /* eventogy */,
-				E71CDE7F24926B0B00F5EE9A /* eventogyTests */,
+				E71CDE6624926B0900F5EE9A /* Eventogy */,
+				E71CDE7F24926B0B00F5EE9A /* EventogyTests */,
 				E71CDE6524926B0900F5EE9A /* Products */,
+				5C515F65F511CB6987545E4E /* Pods */,
+				C2E057A0867F1F2BF80221E2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,27 +109,30 @@
 			isa = PBXGroup;
 			children = (
 				E71CDE6424926B0900F5EE9A /* Eventogy.app */,
-				E71CDE7C24926B0B00F5EE9A /* eventogyTests.xctest */,
+				E71CDE7C24926B0B00F5EE9A /* EventogyTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E71CDE6624926B0900F5EE9A /* eventogy */ = {
+		E71CDE6624926B0900F5EE9A /* Eventogy */ = {
 			isa = PBXGroup;
 			children = (
+				E71CDE9724927DBA00F5EE9A /* APIService */,
 				E71CDE6724926B0900F5EE9A /* AppDelegate.swift */,
 				E71CDE8C24926B3500F5EE9A /* support */,
+				E71CDE8F249279B200F5EE9A /* Model */,
 			);
-			path = eventogy;
+			path = Eventogy;
 			sourceTree = "<group>";
 		};
-		E71CDE7F24926B0B00F5EE9A /* eventogyTests */ = {
+		E71CDE7F24926B0B00F5EE9A /* EventogyTests */ = {
 			isa = PBXGroup;
 			children = (
-				E71CDE8024926B0B00F5EE9A /* eventogyTests.swift */,
+				E71CDE9024927A0400F5EE9A /* contacts.json */,
+				E71CDE8024926B0B00F5EE9A /* EventogyTests.swift */,
 				E71CDE8224926B0B00F5EE9A /* Info.plist */,
 			);
-			path = eventogyTests;
+			path = EventogyTests;
 			sourceTree = "<group>";
 		};
 		E71CDE8C24926B3500F5EE9A /* support */ = {
@@ -101,30 +146,51 @@
 			path = support;
 			sourceTree = "<group>";
 		};
+		E71CDE8F249279B200F5EE9A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E71CDE8D249279AD00F5EE9A /* Contact.swift */,
+				E71CDE9224927C2200F5EE9A /* EODecoder.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		E71CDE9724927DBA00F5EE9A /* APIService */ = {
+			isa = PBXGroup;
+			children = (
+				E71CDE9424927D8C00F5EE9A /* MockService.swift */,
+				E71CDE9824927DDD00F5EE9A /* ServiceType.swift */,
+			);
+			path = APIService;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E71CDE6324926B0900F5EE9A /* eventogy */ = {
+		E71CDE6324926B0900F5EE9A /* Eventogy */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E71CDE8524926B0B00F5EE9A /* Build configuration list for PBXNativeTarget "eventogy" */;
+			buildConfigurationList = E71CDE8524926B0B00F5EE9A /* Build configuration list for PBXNativeTarget "Eventogy" */;
 			buildPhases = (
+				371D1C482BBD845049BD2EDD /* [CP] Check Pods Manifest.lock */,
 				E71CDE6024926B0900F5EE9A /* Sources */,
 				E71CDE6124926B0900F5EE9A /* Frameworks */,
 				E71CDE6224926B0900F5EE9A /* Resources */,
+				9A5AE990BEDD5BD4BF2B194A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = eventogy;
+			name = Eventogy;
 			productName = eventogy;
 			productReference = E71CDE6424926B0900F5EE9A /* Eventogy.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E71CDE7B24926B0B00F5EE9A /* eventogyTests */ = {
+		E71CDE7B24926B0B00F5EE9A /* EventogyTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E71CDE8824926B0B00F5EE9A /* Build configuration list for PBXNativeTarget "eventogyTests" */;
+			buildConfigurationList = E71CDE8824926B0B00F5EE9A /* Build configuration list for PBXNativeTarget "EventogyTests" */;
 			buildPhases = (
+				1AFC24C52DF7731B610CD893 /* [CP] Check Pods Manifest.lock */,
 				E71CDE7824926B0B00F5EE9A /* Sources */,
 				E71CDE7924926B0B00F5EE9A /* Frameworks */,
 				E71CDE7A24926B0B00F5EE9A /* Resources */,
@@ -134,9 +200,9 @@
 			dependencies = (
 				E71CDE7E24926B0B00F5EE9A /* PBXTargetDependency */,
 			);
-			name = eventogyTests;
+			name = EventogyTests;
 			productName = eventogyTests;
-			productReference = E71CDE7C24926B0B00F5EE9A /* eventogyTests.xctest */;
+			productReference = E71CDE7C24926B0B00F5EE9A /* EventogyTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -158,7 +224,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E71CDE5F24926B0900F5EE9A /* Build configuration list for PBXProject "eventogy" */;
+			buildConfigurationList = E71CDE5F24926B0900F5EE9A /* Build configuration list for PBXProject "Eventogy" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -171,8 +237,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E71CDE6324926B0900F5EE9A /* eventogy */,
-				E71CDE7B24926B0B00F5EE9A /* eventogyTests */,
+				E71CDE6324926B0900F5EE9A /* Eventogy */,
+				E71CDE7B24926B0B00F5EE9A /* EventogyTests */,
 			);
 		};
 /* End PBXProject section */
@@ -192,17 +258,86 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E71CDE9124927A0500F5EE9A /* contacts.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1AFC24C52DF7731B610CD893 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EventogyTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		371D1C482BBD845049BD2EDD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Eventogy-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9A5AE990BEDD5BD4BF2B194A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Eventogy/Pods-Eventogy-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Eventogy/Pods-Eventogy-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Eventogy/Pods-Eventogy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E71CDE6024926B0900F5EE9A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E71CDE9324927C2200F5EE9A /* EODecoder.swift in Sources */,
+				E71CDE9A24927F2A00F5EE9A /* MockService.swift in Sources */,
+				E71CDE8E249279AD00F5EE9A /* Contact.swift in Sources */,
 				E71CDE6824926B0900F5EE9A /* AppDelegate.swift in Sources */,
+				E71CDE9924927DDD00F5EE9A /* ServiceType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,7 +345,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E71CDE8124926B0B00F5EE9A /* eventogyTests.swift in Sources */,
+				E71CDE8124926B0B00F5EE9A /* EventogyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,7 +354,7 @@
 /* Begin PBXTargetDependency section */
 		E71CDE7E24926B0B00F5EE9A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E71CDE6324926B0900F5EE9A /* eventogy */;
+			target = E71CDE6324926B0900F5EE9A /* Eventogy */;
 			targetProxy = E71CDE7D24926B0B00F5EE9A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -360,6 +495,7 @@
 		};
 		E71CDE8624926B0B00F5EE9A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A873B843A01D599F50CC632 /* Pods-Eventogy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -379,6 +515,7 @@
 		};
 		E71CDE8724926B0B00F5EE9A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E47ED9BFBE953CC934F0E25E /* Pods-Eventogy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -398,6 +535,7 @@
 		};
 		E71CDE8924926B0B00F5EE9A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 65401C0A55915638855F1873 /* Pods-EventogyTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -414,12 +552,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/eventogy.app/eventogy";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Eventogy.app/Eventogy";
 			};
 			name = Debug;
 		};
 		E71CDE8A24926B0B00F5EE9A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 61B203F898490D6DD22AD312 /* Pods-EventogyTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -436,14 +575,14 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/eventogy.app/eventogy";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Eventogy.app/Eventogy";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E71CDE5F24926B0900F5EE9A /* Build configuration list for PBXProject "eventogy" */ = {
+		E71CDE5F24926B0900F5EE9A /* Build configuration list for PBXProject "Eventogy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E71CDE8324926B0B00F5EE9A /* Debug */,
@@ -452,7 +591,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E71CDE8524926B0B00F5EE9A /* Build configuration list for PBXNativeTarget "eventogy" */ = {
+		E71CDE8524926B0B00F5EE9A /* Build configuration list for PBXNativeTarget "Eventogy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E71CDE8624926B0B00F5EE9A /* Debug */,
@@ -461,7 +600,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E71CDE8824926B0B00F5EE9A /* Build configuration list for PBXNativeTarget "eventogyTests" */ = {
+		E71CDE8824926B0B00F5EE9A /* Build configuration list for PBXNativeTarget "EventogyTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E71CDE8924926B0B00F5EE9A /* Debug */,
