@@ -25,6 +25,7 @@
 		E71CDEA62492895100F5EE9A /* ContactsListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71CDEA52492895100F5EE9A /* ContactsListCoordinator.swift */; };
 		E71CDEA724928FB100F5EE9A /* contacts.json in Resources */ = {isa = PBXBuildFile; fileRef = E71CDE9024927A0400F5EE9A /* contacts.json */; };
 		E71CDEAC249299B200F5EE9A /* DBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71CDEAB249299B200F5EE9A /* DBService.swift */; };
+		E71CDEAE2492B07900F5EE9A /* ContactDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71CDEAD2492B07900F5EE9A /* ContactDetailViewController.swift */; };
 		F7DFAC0B44A7EE65A7721B2F /* Pods_EventogyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B50944FAA6EEFBCF0BF47A62 /* Pods_EventogyTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +66,7 @@
 		E71CDEA32492889F00F5EE9A /* Rx+extention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Rx+extention.swift"; sourceTree = "<group>"; };
 		E71CDEA52492895100F5EE9A /* ContactsListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsListCoordinator.swift; sourceTree = "<group>"; };
 		E71CDEAB249299B200F5EE9A /* DBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBService.swift; sourceTree = "<group>"; };
+		E71CDEAD2492B07900F5EE9A /* ContactDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +189,7 @@
 				E71CDE9B2492832E00F5EE9A /* ContactsListViewController.swift */,
 				E71CDE9E2492852C00F5EE9A /* ContactsListViewModel.swift */,
 				E71CDEA52492895100F5EE9A /* ContactsListCoordinator.swift */,
+				E71CDEAD2492B07900F5EE9A /* ContactDetailViewController.swift */,
 			);
 			path = ContactsListViewController;
 			sourceTree = "<group>";
@@ -387,6 +390,7 @@
 				E71CDEAC249299B200F5EE9A /* DBService.swift in Sources */,
 				E71CDEA42492889F00F5EE9A /* Rx+extention.swift in Sources */,
 				E71CDE6824926B0900F5EE9A /* AppDelegate.swift in Sources */,
+				E71CDEAE2492B07900F5EE9A /* ContactDetailViewController.swift in Sources */,
 				E71CDE9924927DDD00F5EE9A /* ServiceType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

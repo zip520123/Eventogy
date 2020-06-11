@@ -27,8 +27,9 @@ final class ContactsListCoordinator: ContactsListCoordinatorProtocol {
   }
   
   func rxbinding() {
-    viewModel.outputs.showContactDetail.drive(onNext: { (contact) in
-      print(contact)
+    viewModel.outputs.showContactDetail.drive(onNext: {[weak self] (contact) in
+      let contactDetailViewController = ContactDetailViewController(contact: contact)
+      self?.navigation.pushViewController(contactDetailViewController, animated: true)
     }).disposed(by: disposeBag)
   }
   
