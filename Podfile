@@ -7,6 +7,7 @@ target 'Eventogy' do
   pod 'Alamofire'
   pod 'Kingfisher'
   pod 'SnapKit'
+  pod 'SwiftLint'
 
   target 'EventogyTests' do
     inherit! :search_paths

@@ -9,12 +9,12 @@
 import Foundation
 import RxSwift
 struct MockService: ServiceType {
-  var testString : String = ""
+  var testString: String = ""
   func requestContact(page: Int) -> Observable<[Contact]> {
     let data = testString.data(using: .utf8)!
-    let model = try! EODecoder().decode([Contact].self, from: data)
+    guard let model = try? EODecoder().decode([Contact].self, from: data) else { return Observable.never() }
+
     return Observable.just(model)
   }
-  
-  
+
 }

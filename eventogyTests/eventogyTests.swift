@@ -10,9 +10,9 @@ import XCTest
 import RxSwift
 @testable import Eventogy
 
-class eventogyTests: XCTestCase {
+class EventogyTests: XCTestCase {
   let disposeBag = DisposeBag()
-  
+
   override func setUp() {
     super.setUp()
     //remove all keys in userDefault
@@ -20,13 +20,12 @@ class eventogyTests: XCTestCase {
       UserDefaults.standard.removePersistentDomain(forName: appDomain)
     }
   }
-  
-  
+
   func testDecodeContact() throws {
     let data = try readString(from: "contacts.json").data(using: .utf8)!
-    
-    let model = try! EODecoder().decode([Contact].self, from: data)
-    
+
+    let model = try EODecoder().decode([Contact].self, from: data)
+
     XCTAssert(model.count == 6)
     XCTAssert(model[0].id == 100)
     XCTAssert(model[0].title == "Mr")
@@ -39,45 +38,44 @@ class eventogyTests: XCTestCase {
     XCTAssert(model[0].createdAt == Date(timeIntervalSince1970: 1587554436))
     XCTAssert(model[0].updatedAt == Date(timeIntervalSince1970: 1587554536))
   }
-  
-  
+
   func testContactViewModel_FetchFunction() throws {
     let service = try mockService(with: "contacts.json")
     let viewModel = ContactsListViewModel(service: service)
     let expection = XCTestExpectation()
-    
-    viewModel.outputs.didGetContact.drive(onNext: { (contact) in
+
+    viewModel.outputs.didGetContact.drive(onNext: { (_) in
       expection.fulfill()
     }).disposed(by: disposeBag)
-    
+
     viewModel.inputs.shouldGetContact.acceptAction()
-    
-    wait(for: [expection], timeout: 10)
-    
+
+    wait(for: [expection], timeout: 5)
+
   }
-  
+
   func testRealApiRequest() {
     let service = Service()
     let expectation = XCTestExpectation()
-    
-    service.requestContact(page: 1).subscribe(onNext: { (contact) in
+
+    service.requestContact(page: 1).subscribe(onNext: { (_) in
       expectation.fulfill()
     }).disposed(by: disposeBag)
-    
+
     wait(for: [expectation], timeout: 5)
   }
-  
+
   func testDBReadWrite() throws {
     let db = UserDefaultDB()
     let data = try readString(from: "contacts.json").data(using: .utf8)!
-    let fakeContacts = try! EODecoder().decode([Contact].self, from: data)
+    let fakeContacts = try EODecoder().decode([Contact].self, from: data)
     let expectation = XCTestExpectation()
-    
+
     db.readContacts().flatMap { (contacts) -> Observable<()> in
         XCTAssert(contacts.count == 0)
         return db.save(contacts: fakeContacts)
       }
-      .flatMap ({
+      .flatMap({
         return db.readContacts()
       })
       .subscribe(onNext: { (contacts) in
@@ -85,7 +83,7 @@ class eventogyTests: XCTestCase {
         expectation.fulfill()
       })
       .disposed(by: disposeBag)
-      
+
     wait(for: [expectation], timeout: 5)
   }
 

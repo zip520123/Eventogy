@@ -15,7 +15,7 @@ protocol DB {
 
 struct UserDefaultDB: DB {
   static let savedContactKey = "savedContactKey"
-  
+
   func save(contacts: [Contact]) -> Observable<()> {
     return Observable.create { (observer) in
       if let encoded = try? JSONEncoder().encode(contacts) {
@@ -26,20 +26,16 @@ struct UserDefaultDB: DB {
       return Disposables.create()
     }
   }
-  
   func readContacts() -> Observable<[Contact]> {
     return Observable.create { (observer) in
-      
       guard let data = UserDefaults.standard.object(forKey: UserDefaultDB.savedContactKey) as? Data,
         let savedPosts = try? JSONDecoder().decode([Contact].self, from: data) else {
           observer.onNext([])
           observer.onCompleted()
           return Disposables.create()
       }
-      
       observer.onNext(savedPosts)
       observer.onCompleted()
-      
       return Disposables.create()
     }
   }

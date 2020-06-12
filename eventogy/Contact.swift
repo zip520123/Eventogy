@@ -21,11 +21,9 @@ struct Contact: Codable {
   let createdAt: Date?
   let updatedAt: Date?
   var avatarURL: String {
-    get {
       return "https://api.adorable.io/avatars/285/\(firstName ?? "")\(lastName ?? "")\(id)@adorable.io.png"
-    }
   }
-  
+
   private enum CodingKeys: String, CodingKey {
     case id
     case index
@@ -39,6 +37,5 @@ struct Contact: Codable {
     case createdAt
     case updatedAt
   }
-  
-  
+
 }

@@ -222,6 +222,7 @@
 				E71CDE6124926B0900F5EE9A /* Frameworks */,
 				E71CDE6224926B0900F5EE9A /* Resources */,
 				9A5AE990BEDD5BD4BF2B194A /* [CP] Embed Pods Frameworks */,
+				E71CDF0724941DB700F5EE9A /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -372,6 +373,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Eventogy/Pods-Eventogy-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		E71CDF0724941DB700F5EE9A /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

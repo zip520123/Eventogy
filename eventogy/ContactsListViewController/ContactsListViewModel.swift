@@ -2,7 +2,6 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-
 final class ContactsListViewModel {
 
   struct ContactsListViewModelInputs {
@@ -24,13 +23,13 @@ final class ContactsListViewModel {
     let currentPage = BehaviorRelay<Int>(value: 1)
     let shouldSaveContacts = PublishRelay<[Contact]>()
     let shouldGetContact = PublishRelay<()>()
-    
+
     shouldSaveContacts.flatMapFirst({ (contacts) in
       db.save(contacts: contacts) })
     .subscribe(onNext: { (_) in
       print("did save contacts") })
     .disposed(by: disposeBag)
-    
+
     let didGetContact = shouldGetContact
       .withLatestFrom(currentPage)
       .flatMapFirst { page in
@@ -40,11 +39,11 @@ final class ContactsListViewModel {
         shouldSaveContacts.accept(contacts)
         currentPage.nextPage()
       })
-      .catchError({ (error) in
+      .catchError({ (_) in
         db.readContacts()
       })
       .asDriverOnErrorJustIgnored()
-    
+
     let shouldShowContactDetail = PublishRelay<Contact>()
     let showContactDetail = shouldShowContactDetail.asDriverOnErrorJustIgnored()
 

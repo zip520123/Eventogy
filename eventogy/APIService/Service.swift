@@ -15,10 +15,8 @@ enum NetworkError: Error {
 }
 
 struct Service: ServiceType {
-  
   func requestContact(page: Int) -> Observable<[Contact]> {
     return Observable<[Contact]>.create { (observer) -> Disposable in
-      
       let path = "https://demomedia.co.uk/files/contacts.json"
       let request = AF.request(path).responseDecodable(of: [Contact].self, decoder: EODecoder()) { (response) in
         do {
@@ -35,4 +33,3 @@ struct Service: ServiceType {
     }
   }
 }
-
