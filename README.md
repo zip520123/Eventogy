@@ -27,3 +27,11 @@ $ pod install
 Alamofire make the url caches for us.
 We don’t need to save data into db for offline.
 I still write save data to db function in case you want to see. :)
+
+# FeedBack from Eventogy:
+
+I would like to thank you for taking the time to talk to us and for completing the task. I regret to inform you that we have decided not to progress further with your application.
+
+Unfortunately, your code did not meet our minimum coding standards. Although the code was well executed, it lacked in a proper file management structure. The model would have benefited from better execution as it can result in duplicated and unmanageable code.
+
+I wish you every success with your job search. Thanks again for your interest in our company and I hope that maybe one day our paths will cross again.
